@@ -1,0 +1,23 @@
+# Pycharm #
+############
+./idea
+.idea/
+
+# Sublime #
+###########
+*.sublime-project
+*.sublime-workspace
+
+# Ipython #
+###########
+*ipynb*
+ipython_log*
+
+# Misc #
+########
+*.csv
+*.sql
+*.dump
+*.gz
+*.bak
+*.retry

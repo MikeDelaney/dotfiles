@@ -1,0 +1,21 @@
+[user]
+	name = MikeDelaney
+	email = mdelaney@utexas.edu
+[core]
+	autocrlf = input
+	safecrlf = true
+	excludesfile = /home/miked/.gitignore_global
+	editor = vim
+[alias]
+    ass = add
+    puhs = push
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	undo = reset HEAD~1 --mixed
+	wip = commit -am \"WIP\"
+	save = !git add -A && git commit -m \"SAVEPOINT\"
