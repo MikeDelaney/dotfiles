@@ -19,8 +19,10 @@
 
     " Better Python code completion.
     Plug 'davidhalter/jedi-vim', { 'filetypes' : ['python'] }
+    " Plug 'Valloric/YouCompleteMe'
     " Use Python mode for all the awesome PEP-8 stuff but not for completion.
-    Plug 'klen/python-mode', { 'filetypes' : ['python'] }
+    " Plug 'klen/python-mode', { 'filetypes' : ['python'] }
+    Plug 'nvie/vim-flake8'
 
     " Vim window manager. CTRL-N, CTRL-C (Close), CTRL-space (Make active
     " window), CTRL-J (Next), CTRL-K (Prev)
@@ -304,6 +306,10 @@
     let NERDSpaceDelims=1 " Add space delimiters
     let g:gitgutter_eager=0 " Only run gitgutter on read/write of files
 
+    " YouCompleteMe settings
+    " let g:ycm_autoclose_preview_window_after_completion=1
+    " map <Leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
     " airline settings
     let g:airline#extensions#tabline#enabled = 1 " Adding pretty tabline
     let g:airline#extensions#tabline#show_buffers = 1 " Make 0 for not showing closed buffers
@@ -451,7 +457,7 @@
         autocmd!
         " highlight characters past column 120
         autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
-        autocmd FileType python match Excess /\%80v.*/
+        autocmd FileType python match Excess /\%100v.*/
         autocmd FileType python set nowrap
     augroup END
 " }
