@@ -36,7 +36,7 @@
     Plug 'honza/vim-snippets'
 
     " If you pip install "howdoi" you can use it in Vim
-    Plug 'laurentgoudet/vim-howdoi'
+    " Plug 'laurentgoudet/vim-howdoi'
 
     " Tagbar for browsing source code trees.
     Plug 'majutsushi/tagbar'
