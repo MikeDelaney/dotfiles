@@ -19,3 +19,8 @@
 	undo = reset HEAD~1 --mixed
 	wip = commit -am \"WIP\"
 	save = !git add -A && git commit -m \"SAVEPOINT\"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
