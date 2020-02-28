@@ -1,7 +1,0 @@
-# Copy to server to default login to bash
-
-if [ "$SHELL" != "/bin/bash" ]
-then
-    export SHELL="/bin/bash"
-    exec /bin/bash -l    # -l: login shell again
-fi
