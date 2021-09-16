@@ -3,6 +3,9 @@
 "*****************************************************************************
 "" Vim-PLug core
 "*****************************************************************************
+"
+let g:polyglot_disabled = ['python']
+
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 
 let g:vim_bootstrap_langs = "html,javascript,python"
@@ -433,6 +436,10 @@ nnoremap <Leader>o :.Gbrowse<CR>
 "" Custom configs
 "*****************************************************************************
 
+" Run chezmoi apply whenever a managed dotfile is saved
+autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path %
+
+
 " html
 " for html files, 2 spaces
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
@@ -478,7 +485,7 @@ let g:airline#extensions#virtualenv#enabled = 1
 
 " Syntax highlight
 " Default highlight is better than polyglot
-let g:polyglot_disabled = ['python']
+"" let g:polyglot_disabled = ['python']
 let python_highlight_all = 1
 
 

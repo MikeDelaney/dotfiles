@@ -21,3 +21,11 @@ ipython_log*
 *.gz
 *.bak
 *.retry
+
+# direnv
+.direnv*
+.envrc
+
+# asdf
+.tool-versions
+

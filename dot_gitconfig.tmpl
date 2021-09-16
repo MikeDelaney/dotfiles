@@ -1,10 +1,10 @@
 [user]
-	name = Mike Delaney
-	email = mdelaney@utexas.edu
+	name = {{ .name }}
+	email = {{ .email }}
 [core]
 	autocrlf = input
 	safecrlf = true
-	excludesfile = /home/miked/.gitignore_global
+	excludesfile = {{ .chezmoi.homeDir }}/.gitignore_global
 	editor = vim
 [alias]
     ass = add
@@ -24,3 +24,4 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
