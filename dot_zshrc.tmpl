@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/miked/.oh-my-zsh"
+export ZSH="{{.chezmoi.homeDir}}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -66,7 +66,11 @@ ENABLE_CORRECTION="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+{{ if (eq .chezmoi.os "darwin") }}
+. /usr/local/opt/asdf/libexec/asdf.sh
+{{ else }}
 . $HOME/.asdf/asdf.sh
+{{ end }}
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -114,6 +118,11 @@ eval "$(direnv hook zsh)"
 #    . ~/.functions
 # fi
 
+{{ if (eq .chezmoi.os "darwin") }}
+# Postgres.app
+export PATH="/Applications/Postgres.app/Contents/Versions/10/bin:$PATH"
+
+{{ end }}
 # colorls
 # source $(dirname $(gem which colorls))/tab_complete.sh
 
@@ -127,15 +136,24 @@ eval "$(direnv hook zsh)"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias vim="nvim"
+alias ls="exa"
 # alias ls="colorls"
 # alias lg="lazygit"
 
-# source /Users/pf486146/.config/broot/launcher/bash/br
-source /home/miked/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{{ if (eq .chezmoi.os "darwin") }}
+# Skilljar devtools
+export PATH="$HOME/code/devtools/bin:$PATH"
 
-# source /home/miked/.config/broot/launcher/bash/br
+# Poetry
+export PATH="$HOME/.local/bin:$PATH"
 
-source /home/miked/.config/broot/launcher/bash/br
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{{ else }}
+source {{ .chezmoi.homeDir }}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{{ end }}
+
+source {{ .chezmoi.homeDir }}/.config/broot/launcher/bash/br
+
 # if command -v pyenv 1>/dev/null 2>&1; then
 #   eval "$(pyenv init -)"
 # fi
