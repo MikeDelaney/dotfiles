@@ -184,7 +184,11 @@ else
 
   " IndentLine
   let g:indentLine_enabled = 1
+{{ if (eq .chezmoi.os "darwin") }}
+  let g:indentLine_concealcursor = 'nc'
+{{ else }}
   let g:indentLine_concealcursor = 0
+{{ end }}
   let g:indentLine_char = '┆'
   let g:indentLine_faster = 1
 

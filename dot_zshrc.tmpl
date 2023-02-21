@@ -158,3 +158,8 @@ source {{ .chezmoi.homeDir }}/.config/broot/launcher/bash/br
 #   eval "$(pyenv init -)"
 # fi
 
+{{ if (eq .chezmoi.os "darwin") }}
+export PATH="/Applications/Postgres.app/Contents/Versions/10/bin:$PATH"
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+{{ end }}
+
