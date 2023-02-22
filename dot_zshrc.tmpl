@@ -118,11 +118,6 @@ eval "$(direnv hook zsh)"
 #    . ~/.functions
 # fi
 
-{{ if (eq .chezmoi.os "darwin") }}
-# Postgres.app
-export PATH="/Applications/Postgres.app/Contents/Versions/13/bin:$PATH"
-
-{{ end }}
 # colorls
 # source $(dirname $(gem which colorls))/tab_complete.sh
 
@@ -159,7 +154,7 @@ source {{ .chezmoi.homeDir }}/.config/broot/launcher/bash/br
 # fi
 
 {{ if (eq .chezmoi.os "darwin") }}
-export PATH="/Applications/Postgres.app/Contents/Versions/10/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 {{ end }}
 
