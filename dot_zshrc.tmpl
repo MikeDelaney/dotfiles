@@ -133,7 +133,8 @@ eval "$(direnv hook zsh)"
 {{ if (eq .chezmoi.os "darwin") }}
 alias vim="nvim"
 {{ else }}
-alias vim="/home/miked/Applications/nvim.appimage"
+alias vim="nvim"
+alias vi="nvim"
 {{ end }}
 alias ls="exa"
 # alias ls="colorls"
