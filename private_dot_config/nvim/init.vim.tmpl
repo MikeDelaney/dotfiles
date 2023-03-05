@@ -154,8 +154,8 @@ let g:session_command_aliases = 1
 let g:python3_host_prog = "{{ .chezmoi.homeDir }}/py3nvim/.direnv/python-3.7.12/bin/python"
 let g:python_host_prog = "{{ .chezmoi.homeDir }}/.asdf/installs/python/2.7.18/bin/python"
 {{ else }}
-let g:python3_host_prog = "{{ .chezmoi.homeDir }}/.pyenv/versions/py3nvim/bin/python"
-let g:python_host_prog = "{{ .chezmoi.homeDir }}/.pyenv/versions/pynvim/bin/python"
+let g:python3_host_prog = "{{ .chezmoi.homeDir }}/.asdf/installs/python/3.11.2/bin/python"
+let g:python_host_prog = "{{ .chezmoi.homeDir }}/.asdf/installs/python/2.7.18/bin/python"
 {{ end }}
 
 
@@ -184,11 +184,7 @@ else
 
   " IndentLine
   let g:indentLine_enabled = 1
-{{ if (eq .chezmoi.os "darwin") }}
   let g:indentLine_concealcursor = 'nc'
-{{ else }}
-  let g:indentLine_concealcursor = 0
-{{ end }}
   let g:indentLine_char = '┆'
   let g:indentLine_faster = 1
 

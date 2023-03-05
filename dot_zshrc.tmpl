@@ -130,7 +130,11 @@ eval "$(direnv hook zsh)"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+{{ if (eq .chezmoi.os "darwin") }}
 alias vim="nvim"
+{{ else }}
+alias vim="/home/miked/Applications/nvim.appimage"
+{{ end }}
 alias ls="exa"
 # alias ls="colorls"
 # alias lg="lazygit"
