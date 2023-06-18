@@ -165,12 +165,25 @@ linters.setup {
 -- Additional Plugins
 lvim.plugins = {
   {
-  "ggandor/leap.nvim",
-  name = "leap",
-  config = function()
-    require("leap").add_default_mappings()
-  end,
-},
+    "ggandor/leap.nvim",
+    name = "leap",
+    config = function()
+      require("leap").add_default_mappings()
+    end,
+  },
+{{ if eq .chezmoi.hostname "pop-os"}}
+  {
+    "zbirenbaum/copilot-cmp",
+    event = "InsertEnter",
+    dependencies = { "zbirenbaum/copilot.lua" },
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup() -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
+        require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
+      end, 100)
+    end,
+  },
+{{ end }}
 --     {
 --       "folke/trouble.nvim",
 --       cmd = "TroubleToggle",
