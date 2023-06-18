@@ -12,6 +12,7 @@ set -gx PATH "$HOME/.cargo/bin" $PATH
 alias ls exa
 alias vim nvim
 alias vi nvim
+alias lg lazygit
 
 direnv hook fish | source
 
