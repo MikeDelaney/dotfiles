@@ -162,6 +162,8 @@ source {{ .chezmoi.homeDir }}/.config/broot/launcher/bash/br
 
 {{ if (eq .chezmoi.os "darwin") }}
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+# Use brew curl due to vulnerability
+export PATH="/usr/local/opt/curl/bin:$PATH"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 {{ end }}
 
