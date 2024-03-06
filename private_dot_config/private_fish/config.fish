@@ -8,6 +8,8 @@ source ~/.asdf/asdf.fish
 set BROWSER /usr/bin/firefox
 set -gx EDITOR nvim
 set -gx PATH "$HOME/.cargo/bin" $PATH
+# For Fly.io cli (used for Actual Budget
+set -gx PATH "$HOME/.fly/bin" $PATH
 
 alias ls exa
 alias vim nvim
