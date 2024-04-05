@@ -16,6 +16,7 @@ alias vim nvim
 alias vi nvim
 alias lg lazygit
 alias mysql "podman exec -it mysql mysql -p"
+alias psql "podman exec -it postgres psql -U postgres"
 
 direnv hook fish | source
 
