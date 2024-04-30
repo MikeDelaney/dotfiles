@@ -11,7 +11,7 @@ set -gx PATH "$HOME/.cargo/bin" $PATH
 # For Fly.io cli (used for Actual Budget
 set -gx PATH "$HOME/.fly/bin" $PATH
 
-alias ls exa
+alias ls eza
 alias vim nvim
 alias vi nvim
 alias lg lazygit
