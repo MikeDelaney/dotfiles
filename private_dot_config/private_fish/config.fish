@@ -8,7 +8,8 @@ source ~/.asdf/asdf.fish
 set BROWSER /usr/bin/firefox
 set -gx EDITOR nvim
 set -gx PATH "$HOME/.cargo/bin" $PATH
-set -gx FLUTTER_ROOT "(asdf) where flutter)"
+set -x FLUTTER_ROOT (asdf where flutter)
+set -x PATH (asdf where flutter)/bin $PATH
 # For Fly.io cli (used for Actual Budget
 set -gx PATH "$HOME/.fly/bin" $PATH
 
